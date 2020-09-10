@@ -24,6 +24,7 @@ $navbar-font-color: #111112;
     }
   }
 }
+
 #logo {
   letter-spacing: .2px;
   color: $navbar-font-color;
@@ -42,7 +43,6 @@ $navbar-font-color: #111112;
     justify-content: space-between;
   }
   .img-responsive {
-    height: 400px;
     width: 325px;
   }
 }
