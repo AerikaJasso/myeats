@@ -3,12 +3,12 @@
     <%= link_to "MyEats", root_path, class: "navbar-brand mr-2", id:"logo" %>
 
     <div class="dropdown">
-      <a href="#" class="btn btn-link dropdown-toggle" tabindex="0">
+      <a href="#" data-turbolinks="false" class="btn btn-link dropdown-toggle" tabindex="0">
         Do something
       </a>
       <!-- menu component -->
       <ul class="menu">
-        <li>
+        <li class="menu-item">
           <%= link_to "Create a new recipe", new_recipe_path %>
         </li>
       </ul>

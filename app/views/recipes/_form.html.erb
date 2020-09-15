@@ -1,5 +1,5 @@
 <%= render "shared/errors", obj:@recipe %>
-<div class="col-12">
+<div class="column col-4 col-lg-6 col-md-8 col-sm-12 col-mx-auto">
   <%= form_for @recipe do |f| %>
     <div class="form-group">
       <%= f.label :name, "Recipe Name", class: "form-label" %>
@@ -8,12 +8,6 @@
       <%= f.label :description, "Recipe Description", class: "form-label"%>
       <%= f.text_area :description, rows: 10, class: "form-input", placeholder: "Enter steps to create to create your masterpiece."%>
     </div>
-    <%= f.submit class:"btn recipe-form-button" %>
+    <%= f.submit class:"btn btn-main" %>
   <% end %>
-
-  <div class="text-center">
-    <kbd>
-      <%= link_to "I changed my mind. Take me back to see the recipes.", recipes_path %>
-    </kbd>
-  </div>
 </div>

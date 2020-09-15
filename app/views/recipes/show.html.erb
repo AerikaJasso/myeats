@@ -1,19 +1,25 @@
+<%= render "shared/page_title", title: @recipe.name %>
+
 <div class="container recipe-show-container">
-  <%= render "shared/page_title", title: @recipe.name %>
-  <%= @recipe.name.capitalize %>
-  <h5>Steps:</h5>
-  <%= simple_format(@recipe.description) %>
-
-  <figure class="avatar avatar-xl">
-    <%= link_to avatar_for_cook(@recipe.cook), recipes_path %>
-  </figure>
-  <%= @recipe.cook.cook_name %>
-  <%= button_to "Edit recipe", edit_recipe_path(@recipe), class: "btn btn-primary", :method => :get %>
-  <%= button_to "Delete recipe", recipe_path(@recipe), class: "btn btn-primary", :method => :delete %>
-
-  <div class="text-center">
-    <kbd>
-      <%= link_to "I changed my mind. Take me back to see the recipes.", recipes_path %>
-    </kbd>
+  <div class="column col-4 col-lg-6 col-md-8 col-sm-12 col-mx-auto">
+    <div class="panel">
+      <div class="panel-header text-center">
+        <figure class="avatar avatar-xl">
+          <%= link_to avatar_for_cook(@recipe.cook), recipes_path %>
+        </figure>
+        <div class="panel-title h5 mt-10">
+          <%= @recipe.cook.cook_name.pluralize + " recipe" %>
+        </div>
+      </div>
+      <div class="panel-body">
+        <%= simple_format(@recipe.description) %>
+      </div>
+      <div class="panel-footer">
+        <%= button_to "Edit recipe", edit_recipe_path(@recipe), class: "btn btn-main", :method => :get %>
+        <%= link_to "Delete recipe", recipe_path(@recipe), class: "delete-btn", :method => :delete %>
+      </div>
+    </div>
   </div>
+
+  <%= render "recipes_link" %>
 </div>

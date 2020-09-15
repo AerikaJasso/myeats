@@ -1,9 +1,28 @@
 .recipe-show-container {
-  border: solid pink 2px;
+  height: calc(100% - 64px);
+  .panel {
+    min-height: 500px;
+    height: 500px;
+    margin-bottom: 14px;
+    .panel-footer {
+      display: flex;
+      justify-content: space-around;
+      .btn {
+        margin: 0 6px;
+      }
+    }
+  }
 }
 
-// TODO: Style header
-//.recipes-index-container {
-//  .recipe-header {
-//  }
-//}
+.recipes-index-container {
+  .card-header {
+    .card-title {
+      a {
+        color: #111111;
+      }
+      a:hover {
+        color:#fad2c8;
+      }
+    }
+  }
+}

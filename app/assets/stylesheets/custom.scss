@@ -1,13 +1,17 @@
 $navbar-default-bg: #f7f2ee;
 $navbar-font-color: #111112;
-
 @import "spectre";
+@import "foundation-icons";
 
 .navbar {
   background-color: $navbar-default-bg;
   padding: 12px;
-
   .navbar-section {
+    .dropdown {
+      a.btn.btn-link {
+        color: $navbar-font-color;
+      }
+    }
     .input-group {
       .form-input {
         margin-right: 2px;
@@ -26,7 +30,20 @@ $navbar-font-color: #111112;
 }
 
 .container.app-container {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 145px);
+  figure.avatar {
+    background: #fad2c8;
+  }
+}
+
+.recipe-header {
+  line-height: 40px;
+  margin: 24px 0;
+  .header {
+    font-size: 34px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+  }
 }
 
 #logo {
@@ -48,6 +65,56 @@ $navbar-font-color: #111112;
   }
   .img-responsive {
     width: 325px;
+  }
+}
+
+.form-input:focus {
+  border-color: #fad2c8;
+  box-shadow: none;
+}
+
+a:focus {
+  box-shadow: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a.delete-btn {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+a.delete-btn:visited {
+  color: #111111;
+  text-decoration: none;
+}
+
+a.delete-btn:hover {
+  color:#ff4b5b;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn.btn-main {
+  background: #fad2c8;
+  border-color: #fad2c8;
+  color: #111111;
+}
+
+.recipes-link-container {
+  margin: 14px 0;
+  a.recipes-link {
+    color:#fad2c8;
   }
 }
 

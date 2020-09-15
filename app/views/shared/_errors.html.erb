@@ -1,16 +1,19 @@
 <% if obj.errors.any? %>
-  <h4 class="error-title">
-    <%= pluralize(obj.errors.count, "error") %>
-    prohibited this <%= obj.class %> from being saved:
-  </h4>
+  <div class="column col-4 col-lg-6 col-md-8 col-sm-12 col-mx-auto errors-container">
+    <h4 class="error-title">
+      <%= pluralize(obj.errors.count, "error") %>
+      kept this <%= obj.class %> from being saved
+    </h4>
 
-  <div class="error-body">
-    <ul>
-      <%= obj.errors.full_messages.each do |msg| %>
-        <li>
-          <%= msg %>
-        </li>
-      <% end %>
-    </ul>
+    <div class="error-body">
+      <ul>
+        <% obj.errors.full_messages.each do |msg| %>
+          <li>
+            <i class="fi-skull"></i>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 <% end %>
