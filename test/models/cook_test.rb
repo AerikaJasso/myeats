@@ -2,7 +2,8 @@ require 'test_helper'
 
 class CookTest < ActiveSupport::TestCase
   def setup
-    @cook = Cook.new(cook_name: "Isabella", email:"isabella@gmail.com")
+    @cook = Cook.new(cook_name: "Isabella", email:"isabella@gmail.com",
+                     password:"password", password_confirmation: "password")
   end
 
   test "cook should be valid" do
@@ -57,5 +58,15 @@ class CookTest < ActiveSupport::TestCase
     @cook.email = mixed_email
     @cook.save
     assert_equal mixed_email.downcase, @cook.reload.email
+  end
+
+  test "password should be present" do
+    @cook.password = @cook.password_confirmation = " "
+    assert_not @cook.valid?
+  end
+
+  test "password should be at least 8 characters" do
+    @cook.password = @cook.password_confirmation = "a" * 7
+    assert_not @cook.valid?
   end
 end

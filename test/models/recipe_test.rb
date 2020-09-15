@@ -2,7 +2,8 @@ require 'test_helper'
 
 class RecipeTest < ActiveSupport::TestCase
   def setup
-    @cook = Cook.create!(cook_name:"Whizkid", email:"whiz@gmail.com")
+    @cook = Cook.create!(cook_name:"Whizkid", email:"whiz@gmail.com",
+                         password:"password", password_confirmation: "password")
     @recipe = @cook.recipes.new(name: "Pad Thai", description: "Killer Pad Thai Recipe", cook: @cook)
   end
 
