@@ -1,6 +1,19 @@
 <header class="navbar">
   <section class="navbar-section">
     <%= link_to "MyEats", root_path, class: "navbar-brand mr-2", id:"logo" %>
+
+    <div class="dropdown">
+      <a href="#" class="btn btn-link dropdown-toggle" tabindex="0">
+        Do something
+      </a>
+      <!-- menu component -->
+      <ul class="menu">
+        <li>
+          <%= link_to "Create a new recipe", new_recipe_path %>
+        </li>
+      </ul>
+    </div>
+
   </section>
   <section class="navbar-section">
     <div class="input-group input-inline">
