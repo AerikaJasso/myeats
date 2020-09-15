@@ -1,0 +1,38 @@
+<div class="container recipes-new-container">
+  <%= render "shared/page_title", title: "Create a New Recipe" %>
+
+  <% if @recipe.errors.any? %>
+    <h4 class="error-title">
+      <%= pluralize(@recipe.errors.count, "error") %>
+      prohibited this <%= @recipe.class %> from being saved:
+    </h4>
+
+    <div class="error-body">
+      <ul>
+        <%= @recipe.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-12">
+    <%= form_for @recipe do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "Recipe Name", class: "form-label" %>
+        <%= f.text_field :name, class: "form-input" %>
+
+        <%= f.label :description, "Recipe Description", class: "form-label"%>
+        <%= f.text_area :description, rows: 10, class: "form-input", placeholder: "Enter steps to create to create your masterpiece."%>
+      </div>
+      <%= f.submit class:"btn recipe-form-button" %>
+    <% end %>
+
+    <div class="text-center">
+      <kbd>
+         <%= link_to "I changed my mind. Take me back to see the recipes.", recipes_path %>
+      </kbd>
+    </div>
+  </div>
+</div>

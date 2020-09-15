@@ -1,0 +1,8 @@
+<div class="col-3 col-mx-auto">
+  <% flash.each do |name, msg| %>
+    <div class="toast toast-<%=name %>">
+      <a class="btn btn-clear float-right" href="#" data-dismiss="alert"></a>
+      <%= msg %>
+    </div>
+  <% end %>
+</div>

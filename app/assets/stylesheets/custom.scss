@@ -25,6 +25,10 @@ $navbar-font-color: #111112;
   }
 }
 
+.container.app-container {
+  height: calc(100vh - 120px);
+}
+
 #logo {
   letter-spacing: .2px;
   color: $navbar-font-color;

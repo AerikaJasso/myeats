@@ -1,0 +1,12 @@
+<%= render "shared/page_title", title: @recipe.name %>
+<div class="container recipe-show-container">
+  <%= @recipe.name.capitalize %>
+  <h5>Steps:</h5>
+  <%= simple_format(@recipe.description) %>
+
+  <figure class="avatar avatar-xl">
+    <%= link_to avatar_for_cook(@recipe.cook), recipes_path %>
+  </figure>
+  <%= @recipe.cook.cook_name %>
+  <%= button_to "Edit recipe", edit_recipe_path(@recipe), class: "btn btn-primary", :method => :get %>
+</div>
