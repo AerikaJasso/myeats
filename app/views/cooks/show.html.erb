@@ -38,7 +38,7 @@
           </div>
           <div class="tile-content" id="recipes">
             <% @cook.recipes.each do |recipe| %>
-              <div class="tile-recipes-group">
+              <%= link_to recipe_path(recipe) , class: "tile-recipes-group" do %>
                 <div class="tile-subtitle">
                   <%= recipe.name %>
                 </div>
@@ -46,13 +46,13 @@
                 <div class="tile-img">
                   <figure class="avatar avatar-lg" data-initial="AJ" style="background-color: #5755d9;"></figure>
                 </div>
-              </div>
+              <% end %>
               <div class="divider"></div>
             <% end %>
           </div>
         </div>
-
       </div>
+
       <div class="panel-footer">
       </div>
     </div>

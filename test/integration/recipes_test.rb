@@ -22,7 +22,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   test "should get recipes show" do
     get recipe_path(@recipe)
     assert_template "recipes/show"
-    assert_match @recipe.name.capitalize, response.body
+    assert_match @recipe.name, response.body
     assert_match @recipe.description, response.body
   end
 
@@ -32,10 +32,10 @@ class RecipesTest < ActionDispatch::IntegrationTest
     recipe_name = "Fish and chips"
     recipe_description = "Cripsy Halibut beer battered in dill."
     assert_difference "Recipe.count", 1 do
-      post recipes_path, params: { recipe: { name: recipe_name, description: recipe_description }}
+      post recipes_path, params: { recipe: { name: recipe_name.titleize, description: recipe_description }}
     end
     follow_redirect!
-    assert_match recipe_name.capitalize, response.body
+    assert_match recipe_name.titleize, response.body
     assert_match recipe_description, response.body
   end
 
