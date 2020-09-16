@@ -1,24 +1,6 @@
 <%= render "shared/page_title", title:"Recipes" %>
 
 <div class="container recipes-index-container">
-  <div class="columns">
-    <% @recipes.each do |recipe| %>
-      <div class="column col-4 col-sm-12 p-2">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title h5">
-              <%= link_to recipe.name, recipe_path(recipe) %>
-            </div>
-          </div>
-          <div class="card-body">
-            <%= recipe.description %>
-          </div>
-          <div class="card-footer">
-            Created <%= time_ago_in_words(recipe.created_at) %> ago
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%= render "recipe", obj: @recipes %>
 </div>
 

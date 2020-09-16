@@ -1,0 +1,21 @@
+.cooks-show-container {
+  .tab-item:hover {
+    cursor: pointer;
+  }
+  .tab-item.active {
+    border-bottom: 2px solid #fad2c8;
+  }
+  .tile-content {
+    display: none;
+    .tile-recipes-group {
+      display: inline-flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      margin: 6px 0;
+    }
+    .divider:last-child {
+      display: none;
+    }
+  }
+}
