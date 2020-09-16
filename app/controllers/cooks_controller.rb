@@ -13,8 +13,23 @@ class CooksController < ApplicationController
     end
   end
 
+  def edit
+    @cook = Cook.find(params[:id])
+  end
+
   def show
     @cook = Cook.find(params[:id])
+  end
+
+  def  update
+    @cook = Cook.find(params[:id])
+    if @cook.update(cook_params)
+      flash[:success]= "Your profile was updated!"
+      redirect_to @cook
+    else
+      render "edit"
+
+    end
   end
 
   private

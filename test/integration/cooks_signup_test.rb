@@ -25,5 +25,6 @@ class CooksSignupTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template "cooks/show"
     assert_not flash.empty?
+    @cook.reload
   end
 end
