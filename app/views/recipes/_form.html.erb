@@ -2,10 +2,10 @@
 <div class="column col-4 col-lg-6 col-md-8 col-sm-12 col-mx-auto">
   <%= form_for @recipe do |f| %>
     <div class="form-group">
-      <%= f.label :name, "Recipe Name", class: "form-label" %>
+      <%= f.label :name, "Recipe name", class: "form-label" %>
       <%= f.text_field :name, class: "form-input" %>
 
-      <%= f.label :description, "Recipe Description", class: "form-label"%>
+      <%= f.label :description, "Recipe description", class: "form-label"%>
       <%= f.text_area :description, rows: 10, class: "form-input", placeholder: "Enter steps to create to create your masterpiece."%>
     </div>
     <%= f.submit class:"btn btn-main" %>
