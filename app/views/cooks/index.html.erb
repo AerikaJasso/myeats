@@ -1,0 +1,27 @@
+<%= render "shared/page_title", title: "Our cooks" %>
+
+<div class="container cooks-index-container">
+  <% @cooks.each do |cook| %>
+    <div class="column col-4 col-lg-6 col-md-8 col-sm-12 col-mx-auto">
+      <div class="card">
+        <div class="card-header text-center">
+          <figure class="avatar avatar-xl">
+            <%= link_to avatar_for_cook(cook), cook_path(cook) %>
+          </figure>
+          <div class="card-title h5">
+            <%= cook.cook_name.titleize %>
+          </div>
+          <div class="card-subtitle text-gray">
+            <%= pluralize(cook.recipes.count, "recipe") %>
+          </div>
+        </div>
+        <div class="card-body">
+          Cuisine Im currently into
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary">...</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
