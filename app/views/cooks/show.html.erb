@@ -1,7 +1,7 @@
 <%= render "shared/page_title", title: "Cook #{@cook.cook_name}" %>
 
 <div class="container cooks-show-container">
-  <div class="column col-4 col-lg-6 col-md-8 col-sm-12 col-mx-auto">
+  <div class="column col-5 col-lg-6 col-md-8 col-sm-12 col-mx-auto">
     <div class="panel">
       <div class="panel-header text-center">
         <figure class="avatar avatar-xl">
@@ -37,7 +37,7 @@
             </div>
           </div>
           <div class="tile-content" id="recipes">
-            <% @cook.recipes.each do |recipe| %>
+            <% @cook_recipes.each do |recipe| %>
               <%= link_to recipe_path(recipe) , class: "tile-recipes-group" do %>
                 <div class="tile-subtitle">
                   <%= recipe.name %>
@@ -54,6 +54,9 @@
       </div>
 
       <div class="panel-footer">
+        <div class="text-center">
+          <%= will_paginate @cook_recipes , class: "pagination-items"%>
+        </div>
       </div>
     </div>
   </div>
@@ -63,10 +66,4 @@
       <%= @cook.cook_name%>'s recipes
     </kbd>
   </div>
-
-  <%#= render "recipes/recipe", obj:@cook.recipes %>
-
-<!--  <kbd>-->
-    <%#= link_to "I changed my mind. Take me back to see the recipes.", recipes_path , class: "recipes-link"%>
-<!--  </kbd>-->
 </div>

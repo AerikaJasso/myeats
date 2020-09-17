@@ -2,5 +2,9 @@
 
 <div class="container recipes-index-container">
   <%= render "recipe", obj: @recipes %>
+
+  <div class="column col-xs-12 col-mx-auto text-center">
+    <%= will_paginate @recipes , class: "pagination-items"%>
+  </div>
 </div>
 

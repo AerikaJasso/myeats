@@ -1,13 +1,13 @@
 <div class="columns">
   <% obj.each do |recipe| %>
-    <div class="column col-4 col-sm-12 p-2">
+    <div class="column col-6 col-sm-12 p-2">
       <div class="card">
         <div class="card-header">
           <div class="card-title h5">
             <%= link_to recipe.name, recipe_path(recipe) %>
           </div>
         </div>
-        <div class="card-body">
+        <div class="card-body description">
           <%= recipe.description %>
         </div>
         <div class="card-footer">

@@ -1,3 +1,22 @@
+.cooks-index-container {
+  .card {
+    height: 225px;
+    max-height: 225px;
+  }
+
+  .pagination-items {
+    em.current {
+      font-style: normal;
+      color: #595948;
+    }
+    a, .previous_page.disabled ,
+    .next_page.disabled{
+      color: #D9AB82;
+    }
+  }
+}
+
+
 .cooks-show-container {
   .tab-item:hover {
     cursor: pointer;

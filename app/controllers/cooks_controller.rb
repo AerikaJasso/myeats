@@ -1,7 +1,7 @@
 class CooksController < ApplicationController
 
   def index
-    @cooks = Cook.all
+    @cooks = Cook.paginate(page: params[:page], per_page: 3)
   end
 
   def new
@@ -24,6 +24,7 @@ class CooksController < ApplicationController
 
   def show
     @cook = Cook.find(params[:id])
+    @cook_recipes = @cook.recipes.paginate(page: params[:page], per_page: 4)
   end
 
   def  update

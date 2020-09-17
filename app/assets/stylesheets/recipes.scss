@@ -15,14 +15,33 @@
 }
 
 .recipes-index-container {
-  .card-header {
-    .card-title {
-      a {
-        color: #111111;
+  .card {
+    height: 225px;
+    max-height: 225px;
+    .card-header {
+      .card-title {
+        a {
+          color: #111111;
+        }
+        a:hover {
+          color:#fad2c8;
+        }
       }
-      a:hover {
-        color:#fad2c8;
-      }
+    }
+    .card-body.description {
+      max-height: 75%;
+      overflow-y: auto;
+    }
+  }
+
+  .pagination-items {
+    em.current {
+      font-style: normal;
+      color: #595948;
+    }
+    a, .previous_page.disabled ,
+    .next_page.disabled{
+      color: #D9AB82;
     }
   }
 }

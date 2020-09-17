@@ -1,5 +1,6 @@
 $navbar-default-bg: #f7f2ee;
-$navbar-font-color: #111112;
+$navbar-font-color: #D9AB82;
+$page-title-color: #595948;
 @import "spectre";
 @import "foundation-icons";
 
@@ -7,10 +8,8 @@ $navbar-font-color: #111112;
   background-color: $navbar-default-bg;
   padding: 12px;
   .navbar-section {
-    .dropdown {
-      a.btn.btn-link {
-        color: $navbar-font-color;
-      }
+    a.btn.btn-link {
+      color: $navbar-font-color;
     }
     .input-group {
       .form-input {
